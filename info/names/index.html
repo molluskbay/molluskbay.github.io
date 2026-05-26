@@ -23,7 +23,7 @@
 
             <script>
         function readname() {
-            fetch("names.txt")
+            fetch("info/names/names.txt")
                 .then((response) => response.text())
                 .then((text) => standsfor(text.split(/\r?\n/)))
         }

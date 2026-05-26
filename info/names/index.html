@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>みかんまりのページ | 自己紹介</title>
+        <base href="../..">
+        <link rel="icon" href="media/shellred.png">
+        <style>
+            body {font-family:'courier new';text-align:center;}
+            a {text-decoration: none}
+            p {color:#29A6A9}
+            button {cursor:pointer; border:none; padding:0; font-family:'courier new'; font-size:300%}
+        </style>
+    </head>
+
+    <body style="background-color:#062027">
+        <p><a href="." style="color:#29A6A9">mollusca.ink/</a><a href="./info" style="color:#29A6A9">info/</a><a href="./info/names" style="color:#29A6A9">names</a></p>
+        <h1 style="color:#FF8E00">hi i'm </h1>
+
+    <div class="names">
+        <button onclick="readname()" style="color:#FF8E00;background-color:#062027"><b>mari</b></button>
+            </div>
+        <!-- <p><small>(† = extinct)</small></p> -->
+
+            <script>
+        function readname() {
+            fetch("names.txt")
+                .then((response) => response.text())
+                .then((text) => standsfor(text.split(/\r?\n/)))
+        }
+        function standsfor(n) {
+            n = n[Math.floor(Math.random() * n.length)]
+            document.getElementById("names").innerHTML = '<button onclick="readname()" style="color:#FF8E00;background-color:#062027">'+ n +'</button>'
+        }
+    </script>
+
+    </body>
+</html>

@@ -8,7 +8,7 @@
             body {font-family:'courier new';text-align:center;}
             a {text-decoration: none}
             p {color:#29A6A9}
-            button {cursor:pointer; border:none; padding:5px 100px; font-family:'courier new'; font-size:300%}
+            button {cursor:pointer; border:none; border-radius:50px; padding:5px 20px; font-family:'courier new';}
         </style>
     </head>
 
@@ -18,10 +18,12 @@
         <h1 style="color:#FF8E00">hi i'm </h1>
 
     <div id="names">
-        <button onclick="readname()" style="color:#FF8E00;background-color:#062027"><b>mari</b></button>
+        <h1 style="color:#FF8E00; font-size:300%;"><b>mari</b></h1>
             </div>
 
-            <script>
+    <button onclick="readname()" style="color:#29A6A9;background-color:#0A2E37"><i>[get another name]</i></button>
+
+    <script>
         function readname() {
             fetch("info/names/names.txt")
                 .then((response) => response.text())
@@ -29,7 +31,7 @@
         }
         function standsfor(n) {
             n = n[Math.floor(Math.random() * n.length)]
-            document.getElementById("names").innerHTML = '<button onclick="readname()" style="color:#FF8E00;background-color:#062027"><b>'+ n +'</b></button>'
+            document.getElementById("names").innerHTML = '<h1 style="color:#FF8E00; font-size:300%;"><b>'+ n +'</b></h1>'
         }
     </script>
 

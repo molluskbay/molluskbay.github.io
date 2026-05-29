@@ -7,11 +7,30 @@
         <style>
             body {font-family:'courier new';text-align:center;}
             a {text-decoration: none}
+            button {cursor:pointer; border:none; border-radius:50px; padding:5px 20px; font-family:'courier new';}
         </style>
     </head>
 
     <body style="background-color:#062027">
         <p><a href="." style="color:#29A6A9">mollusca.ink/</a><a href="./info" style="color:#29A6A9">info/</a><a href="./info/facts" style="color:#29A6A9">facts</a></p>
-        <h2 style="color:#29A6A9">coming soon</h2>
+
+    <button onclick="readfact()" style="color:#29A6A9;background-color:#0A2E37"><i>[learn more]</i></button>
+
+    <div id="facts">
+        <p style="color:#29A6A9; font-size:150%;"></p>
+            </div>
+
+    <script>
+        function readfact() {
+            fetch("info/facts/facts.txt")
+                .then((response) => response.text())
+                .then((text) => standsfor(text.split(/\r?\n/)))
+        }
+        function standsfor(n) {
+            n = n[Math.floor(Math.random() * n.length)]
+            document.getElementById("facts").innerHTML = '<p style="color:#FF8E00; font-size:150%;">'+ n +'</p>'
+        }
+    </script>
+
     </body>
 </html>
